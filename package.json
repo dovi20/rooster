@@ -1,7 +1,19 @@
 {
-  "name": "builder",
+  "name": "rooster-mvp-generator",
   "version": "0.1.0",
+  "description": "AI-powered MVP generator using OpenRouter models to create Next.js projects from ideas",
   "private": true,
+  "keywords": ["nextjs", "ai", "mvp", "generator", "openrouter", "typescript", "tailwindcss"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dovi20/rooster.git"
+  },
+  "homepage": "https://github.com/dovi20/rooster#readme",
+  "bugs": {
+    "url": "https://github.com/dovi20/rooster/issues"
+  },
+  "author": "Rooster Project",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
