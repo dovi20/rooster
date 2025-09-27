@@ -61,11 +61,26 @@ export async function POST(req: NextRequest) {
     const prompt = [
       {
         role: "system",
-        content:
-          "You are an expert Next.js architect. Generate a minimal but runnable Next.js 14 project. " +
-          "Return ONLY a JSON object with fields: projectName, description, files[], postInstall[], runHint. " +
-          "Each files[] item has path and content. Do not include markdown code fences."
-      },
+    content:
+      "You are an expert Next.js 14 architect. Your task is to generate a full, minimal but complete Next.js 14 project using the App Router with TypeScript. " +
+      "Return ONLY a JSON object with the following fields: projectName, description, files[], postInstall[], runHint. " +
+      "Each files[] item must include the path (relative to project root) and the full file content. " +
+      "The generated project must be immediately runnable after npm install. " +
+      "Ensure the project includes:\n" +
+      "- package.json with scripts (dev, build, start, lint, type-check)\n" +
+      "- next.config.js with default config\n" +
+      "- tsconfig.json for TypeScript setup\n" +
+      "- tailwind.config.js and postcss.config.js if Tailwind is included\n" +
+      "- .eslintrc.json with minimal config\n" +
+      "- app/layout.tsx with metadata and global layout\n" +
+      "- app/page.tsx with a demo UI (not just plain text)\n" +
+      "- app/api/hello/route.ts with a sample API endpoint\n" +
+      "- public/ with favicon\n" +
+      "- styles/globals.css with some base styles\n" +
+      "- README.md explaining how to install and run the project\n" +
+      "Dependencies must be minimal but sufficient for Next.js + TypeScript (+ Tailwind if chosen). " +
+      "The output must be strictly JSON, no explanations, no markdown fences."
+  },
       {
         role: "user",
         content:
